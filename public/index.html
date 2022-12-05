@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Socket.io - Chat</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i&amp;subset=cyrillic"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+    integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" media="screen"
+    href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+</head>
+
+<body class="overflow-hidden">
+  <!-- <body> -->
+  <div class="modal-overlay"></div>
+
+  <div class="modal auth">
+    <div class="modal-header">
+      <div class="container">
+        Enter to the Chat
+      </div>
+    </div>
+
+    <div class="modal-body">
+      <div class="container">
+        <label>
+          <p>
+            User Name <span class="warning">field is required</span>
+          </p>
+
+          <input name="name" type="text" placeholder="Name">
+        </label>
+
+        <label>
+          <p>
+            User Nickname <span class="warning">field is required</span>
+          </p>
+
+          <input name="nick" type="text" placeholder="Nickname">
+        </label>
+      </div>
+    </div>
+
+    <div class="modal-footer">
+      <div class="container">
+        <button class="btn" type="button">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrapper">
+    <header class="header">
+      <div class="container">
+        <div class="header-wrp">
+          Chat
+          <span class="greetings"></span>
+        </div>
+
+      </div>
+    </header>
+
+    <div class="content">
+      <div class="container content-wrp">
+        <div class="main-wrp">
+          <aside>
+            <ul class="users" id="users-list"></ul>
+          </aside>
+
+          <main>
+            <ul class="right-half-row posts"></ul>
+          </main>
+        </div>
+
+
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="message-wrp">
+          <p>
+            Type your message to chat
+            <span class="warning">field is required</span>
+          </p>
+
+          <div class="message-input">
+            <input type="text">
+
+            <button class="btn">Send</button>
+          </div>
+        </div>
+        <div class="disconnected-message"></div>
+        <div class="someone-typed-message"></div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

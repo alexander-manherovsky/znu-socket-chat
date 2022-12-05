@@ -1,0 +1,125 @@
+.main-wrp {
+    @media(min-width: 768px) {
+        display: flex;
+    }
+}
+
+aside {
+    @media(min-width: 768px) {
+        flex: 0 0 300px;
+        padding-right: 15px;
+    }
+    
+    .users {
+        font-size: 1.2rem;;
+        margin-top: 40px;
+        li {
+            position: relative;
+            background-color: $header-bg;
+            border-radius: 15px;
+            padding: 10px 10px 10px 35px;
+            &::before {
+                content: '';
+                position: absolute;
+                left: 10px;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+            }
+            &.online::before {
+                background-color: blue;
+            }
+            &.offline::before {
+                background-color: black;
+            }
+            &.appeared::before {
+                background-color: green;
+            }
+            &.left::before {
+                background-color: #444;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                right: 15px;
+                top: -5px;
+                transform: translateY(-100%);
+                font-size: 1em;
+            }
+
+            &.online::after {
+                content: 'online';
+                color: blue;
+            }
+
+            &.offline::after {
+                content: 'offline';
+                color: black;
+            }
+
+            &.appeared::after {
+                content: 'just appeared';
+                color: green;
+            }
+
+            &.left::after {
+                content: 'just left';
+                color: #777;
+            }
+
+
+            &+li {
+                margin-top: 35px;
+            }
+        }
+    }
+}
+
+main {
+    @media(min-width: 768px) {
+        flex: 1 0 calc(100% - 300px);
+    }
+}
+
+
+
+.post {
+    font-size: 1.2rem;
+    box-shadow: 0px 1px 8px 1px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    margin: 40px 0;
+    &.active {
+        background-color: rgb(224, 228, 204);
+    }
+ 
+    .post-header {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .name-wrp {
+            margin: 20px 0;
+        }
+        .name,
+        .nick {
+            font-size: 1.4em;
+        }
+        // .nick {
+        //     &::before {
+        //         content: 
+        //     }
+        // }
+        .time {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+    }
+    
+    .post-body {
+        font-weight: 300;
+        line-height: 1.67;
+        margin-bottom: 15px;
+    }
+}

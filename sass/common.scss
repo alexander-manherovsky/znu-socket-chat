@@ -1,0 +1,143 @@
+// pushed footer
+body,
+html {
+    height: 100%;
+    color: $main-text;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.content {
+    flex: 1 0 auto;
+}
+
+.header,
+.footer {
+    flex: 0 0 auto;
+}
+///////////////////////
+
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.row {
+    margin: 0 -15px;
+}
+.left-half-row {
+    margin: 0 -15px;
+    @media(min-width: 768px) {
+        margin-right: 0;
+    }
+}
+.right-half-row {
+    margin: 0 -15px;
+    @media(min-width: 768px) {
+        margin-left: 0;
+    }
+}
+
+.col {
+    padding: 0 15px;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+input {
+    color: $main-text;
+    font-size: 1.2rem;
+    border: 1px solid rgb(169, 169, 169);
+    border-radius: 5px;
+    padding: 10px 15px;
+    &:focus {
+        outline: 0;
+    }
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.btn {
+    position: relative;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    border: 0;
+    outline: 0;
+    padding: 10px 15px;
+    color: $white;
+    background-color: $blue-anchor;
+    -webkit-transition-duration: 0.4s;    /* Safari */
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    &:hover {
+        box-shadow: 0 1px 8px rgba(0, 0, 0, .5);
+    }
+    &::after {
+        content: "";
+        background: rgba(255, 255, 255, .5);
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        padding-top: 400%;
+        padding-left: 350%;
+        margin-left: -20px !important;
+        margin-top: -120%;
+        opacity: 0;
+        transition: all 0.4s;
+    }
+    &:active{
+        &:after {
+            padding: 0;
+            margin: 0;
+            opacity: 1;
+            transition: 0s;
+        }
+    }
+}
+
+.invalid {
+    span.warning {
+        display: inline;
+    }
+    input {
+        border-color: $red;
+    }
+}
+span.warning {
+    display: none;
+    color: $red;
+    font-size: 0.8em;
+}
+
+span.name {
+    margin-right: .25rem;
+}
+
+span.nick {
+    color: $blue-anchor;
+}
+
+
