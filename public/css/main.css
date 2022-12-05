@@ -1,0 +1,362 @@
+body,
+html {
+  height: 100%;
+  color: #444;
+  font-family: "Roboto", sans-serif;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.content {
+  flex: 1 0 auto;
+}
+
+.header,
+.footer {
+  flex: 0 0 auto;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.row {
+  margin: 0 -15px;
+}
+
+.left-half-row {
+  margin: 0 -15px;
+}
+@media (min-width: 768px) {
+  .left-half-row {
+    margin-right: 0;
+  }
+}
+
+.right-half-row {
+  margin: 0 -15px;
+}
+@media (min-width: 768px) {
+  .right-half-row {
+    margin-left: 0;
+  }
+}
+
+.col {
+  padding: 0 15px;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+input {
+  color: #444;
+  font-size: 1.2rem;
+  border: 1px solid rgb(169, 169, 169);
+  border-radius: 5px;
+  padding: 10px 15px;
+}
+input:focus {
+  outline: 0;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.btn {
+  position: relative;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  border: 0;
+  outline: 0;
+  padding: 10px 15px;
+  color: #fff;
+  background-color: #2980b9;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+}
+.btn:hover {
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+}
+.btn::after {
+  content: "";
+  background: rgba(255, 255, 255, 0.5);
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding-top: 400%;
+  padding-left: 350%;
+  margin-left: -20px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.4s;
+}
+.btn:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s;
+}
+
+.invalid span.warning {
+  display: inline;
+}
+.invalid input {
+  border-color: #dc3545;
+}
+
+span.warning {
+  display: none;
+  color: #dc3545;
+  font-size: 0.8em;
+}
+
+span.name {
+  margin-right: 0.25rem;
+}
+
+span.nick {
+  color: #2980b9;
+}
+
+.header {
+  color: #fff;
+  background-color: #2980b9;
+  font-size: 4rem;
+  padding: 15px 0;
+}
+.header .header-wrp {
+  display: flex;
+  justify-content: space-between;
+}
+.header .header-wrp .greetings {
+  font-size: 2rem;
+  font-weight: 300;
+  font-style: italic;
+  margin-top: auto;
+}
+
+.footer {
+  color: #444;
+  font-size: 1.2rem;
+  padding: 30px 0;
+}
+
+.message-input {
+  display: flex;
+  margin-top: 5px;
+}
+.message-input input {
+  flex: 1 0 auto;
+  border-radius: 5px 0 0 5px;
+}
+.message-input button {
+  border-radius: 0px 5px 5px 0;
+}
+
+.created-by {
+  padding-top: 30px;
+  border-top: 1px solid rgba(51, 51, 51, 0.5);
+}
+.created-by a {
+  color: #2980b9;
+  font-style: italic;
+}
+.created-by a:hover {
+  text-decoration: underline;
+}
+
+.disconnected-message,
+.someone-typed-message {
+  font-weight: 300;
+  font-style: italic;
+  font-size: 1.2em;
+  margin-top: 10px;
+}
+
+@media (min-width: 768px) {
+  .main-wrp {
+    display: flex;
+  }
+}
+
+@media (min-width: 768px) {
+  aside {
+    flex: 0 0 300px;
+    padding-right: 15px;
+  }
+}
+aside .users {
+  font-size: 1.2rem;
+  margin-top: 40px;
+}
+aside .users li {
+  position: relative;
+  background-color: #ccc;
+  border-radius: 15px;
+  padding: 10px 10px 10px 35px;
+}
+aside .users li::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+aside .users li.online::before {
+  background-color: blue;
+}
+aside .users li.offline::before {
+  background-color: black;
+}
+aside .users li.appeared::before {
+  background-color: green;
+}
+aside .users li.left::before {
+  background-color: #444;
+}
+aside .users li::after {
+  content: "";
+  position: absolute;
+  right: 15px;
+  top: -5px;
+  transform: translateY(-100%);
+  font-size: 1em;
+}
+aside .users li.online::after {
+  content: "online";
+  color: blue;
+}
+aside .users li.offline::after {
+  content: "offline";
+  color: black;
+}
+aside .users li.appeared::after {
+  content: "just appeared";
+  color: green;
+}
+aside .users li.left::after {
+  content: "just left";
+  color: #777;
+}
+aside .users li + li {
+  margin-top: 35px;
+}
+
+@media (min-width: 768px) {
+  main {
+    flex: 1 0 calc(100% - 300px);
+  }
+}
+
+.post {
+  font-size: 1.2rem;
+  box-shadow: 0px 1px 8px 1px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  margin: 40px 0;
+}
+.post.active {
+  background-color: rgb(224, 228, 204);
+}
+.post .post-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.post .post-header .name-wrp {
+  margin: 20px 0;
+}
+.post .post-header .name,
+.post .post-header .nick {
+  font-size: 1.4em;
+}
+.post .post-header .time {
+  font-style: italic;
+  margin-bottom: 20px;
+}
+.post .post-body {
+  font-weight: 300;
+  line-height: 1.67;
+  margin-bottom: 15px;
+}
+
+body.overflow-hidden .modal-overlay,
+body.overflow-hidden .auth {
+  display: block;
+}
+
+.modal-overlay {
+  display: none;
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.modal {
+  display: none;
+  z-index: 1010;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% - 30px);
+  color: #444;
+  background-color: #fff;
+  font-size: 1.2rem;
+  box-shadow: 0px 2px 8px 5px rgba(0, 0, 0, 0.3);
+}
+.modal.auth {
+  max-width: 400px;
+}
+
+.modal-header {
+  color: #fff;
+  background-color: #2980b9;
+  font-size: 1.5em;
+  padding: 20px 0;
+}
+
+.modal-body label {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+.modal-body label input {
+  margin-top: 5px;
+}
+
+.modal-footer {
+  padding: 20px 0;
+}
+.modal-footer button {
+  display: flex;
+  margin-left: auto;
+}
