@@ -1,0 +1,19 @@
+{
+  "name": "znu-socket-chat",
+  "version": "1.0.0",
+  "description": "Small chat with sockets",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexander-manherovsky/znu-socket-chat.git"
+  },
+  "author": "Alexander Manherovsky",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexander-manherovsky/znu-socket-chat/issues"
+  },
+  "homepage": "https://github.com/alexander-manherovsky/znu-socket-chat#readme"
+}
